@@ -27,7 +27,7 @@ Deep Learning Toolbox
 ## Attention！！！
 Due to github's download limitations, please download the ".mat" file manually.
 
-Make sure you download the files without using "DownLoasd zip", as GitHub's compressed downloads can corrupt large files. 
+Make sure you download the ".mat" files without using "DownLoasd zip", as GitHub's compressed downloads can corrupt large files. 
 
 ## Contact Information
 If you have any questions, feel free to contact Jin Li

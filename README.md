@@ -9,10 +9,15 @@ This project is designed for manuscript "MFF-DenseNet: Densely Connected Convolu
 Deep Learning Toolbox
 
 ## Demo
-1. Run Core_program_denoise1.m
-2. Run Core_program_denoise2.m
-3. Run Core_program_denoise3.m
-4. Run field_data_denoise1.m to denoise field data
+
+### For sythentic data 
+1. Run Sythentic_data_denoise1.m
+2. Run Sythentic_data_denoise2.m
+3. Run Sythentic_data_denoise3.m
+
+### For field data
+1. Field_data_denoise1.m
+2. Field_data_denoise2.m
 
 ### Dependencies
 Matlab 2021a and above

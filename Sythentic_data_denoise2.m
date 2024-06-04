@@ -50,18 +50,10 @@ ylim([0.01, 500]);xlim([0.03,75]);grid on;ylabel('Amplitude(dB)','FontWeight','b
 %% corc
 rho3= corr(A', D', 'Type', 'Spearman');
 CORC3 = 1 - (6 * sum((A - D).^2) / (length(D) * (length(D)^2 - 1)));
-
-%r2
-mean_observed = mean(A);
-TSS = sum((A - mean_observed).^2);
-RSS = sum((A - C).^2);
-R_squared = 1 - (RSS / TSS);
 %CORREHENCE
 Fs=150;
 [Cxy,f] = mscohere(A,D,[],[],[],Fs);
-
 figure()
-
 plot(f,Cxy,'Color', [1 0 0], 'LineWidth', 1.2)
 grid on
 xlim([0,75]);ylim([0.5, 1.1]);ylabel('Magnitude-squared coherence','FontWeight','bold');xlabel('Frequency(Hz)');legend('Original noise data-Proposed method')

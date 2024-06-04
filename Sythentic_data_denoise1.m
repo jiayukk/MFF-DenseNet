@@ -1,14 +1,13 @@
 clear
 %% Load data and model
-load('figure9.mat')
+load('Noise1.mat')
 load('MFF_DenseNet.mat')
-
 %% Denoising 
 fd=200;
-MT=Noise_sample9+Signal_sample9;Denoisedata=[];
-for i = 1:length(MT)
+Denoisedata=[];
+for i = 1:length(A)
     if mod(i,fd)==0
-        a = MT(i-fd+1:i);
+        a = A(i-fd+1:i);
         In=reshape(a,fd,1);
         In=reshape(In,[fd,1,1,1]);
         out=predict(MFF_DenseNet,In);
@@ -17,6 +16,7 @@ for i = 1:length(MT)
     end
 end
 C=Denoisedata;
+B=A-C;
 %% Cauculating spectra
 fs=150;
 Y1 = fft(A);
@@ -82,23 +82,19 @@ subplot 341,plot(A,'k'),axis([0 5000 -10000 10000]),text('Units','normalized','S
 ylabel('Amplitude/count','FontWeight','bold');xlabel('Number of sampling points');grid on;set(gca, 'GridLineStyle', ':', 'MinorGridLineStyle', '-', 'GridAlpha', 0.2, 'MinorGridAlpha', 0.2, 'Layer', 'top');
 subplot 345,loglog(f,P1A,'k'),xlim([0.03,75]);title('Spectrum of (a)'); ylim([0.001, 10000]);grid on; text('Units','normalized','String','(e)','Position',[0.01 0.93 0]);ylabel('Amplitude(dB)','FontWeight','bold');xlabel('Frequency(Hz)');
 subplot 349,pcolor(t,frq1,abs(cfss1));colormap("jet"); title("Scalogram of (a)");set(gca,"yscale","log");xlabel('Time (s)','FontWeight','bold');
-text('Units', 'normalized', 'String', '(i)', 'Position', [0.01 1.08 0]);hcol = colorbar;set(hcol);ylabel(hcol, 'Magnitude','FontWeight','bold');
-shading interp  ;axis tight;ylabel("Frequency (Hz)",'FontWeight','bold');set(gca, 'FontSize', 12);clim([0,1])
-subplot 342,plot(B,'Color',[0 0.447058823529412 0.741176470588235]),axis([0 5000 -8000 8000]),text('Units','normalized','String','(b)','Position',[0.01 0.93 0]);title('Extracted noise');
+text('Units', 'normalized', 'String', '(i)', 'Position', [0.01 1.08 0]);shading interp;axis tight;ylabel("Frequency (Hz)",'FontWeight','bold');set(gca, 'FontSize', 12);clim([0,1])
+subplot 342,plot(B,'Color',[0 0.447058823529412 0.741176470588235]),axis([0 5000 -10000 10000]),text('Units','normalized','String','(b)','Position',[0.01 0.93 0]);title('Extracted noise');
 ylabel('Amplitude/count','FontWeight','bold');xlabel('Number of sampling points');grid on;set(gca, 'GridLineStyle', ':', 'MinorGridLineStyle', '-', 'GridAlpha', 0.2, 'MinorGridAlpha', 0.2, 'Layer', 'top');
 subplot 346,loglog(f,P2A,'Color',[0 0.447058823529412 0.741176470588235]),xlim([0.03,75]);title('Spectrum of (b)'); ylim([0.001, 1000]);grid on; text('Units','normalized','String','(f)','Position',[0.01 0.93 0]);ylabel('Amplitude(dB)','FontWeight','bold');xlabel('Frequency(Hz)');
 subplot(3,4,10);pcolor(t,frq2,abs(cfss2));colormap("jet"); title("Scalogram of (b)");set(gca,"yscale","log");xlabel('Time (s)','FontWeight','bold');
-text('Units', 'normalized', 'String', '(j)', 'Position', [0.01 1.08 0]);hcol = colorbar;set(hcol)%;ylabel(hcol, 'Magnitude','FontWeight','bold');
-shading interp  ;axis tight;set(gca, 'FontSize', 12);clim([0,1])
+text('Units', 'normalized', 'String', '(j)', 'Position', [0.01 1.08 0]);shading interp;axis tight;set(gca, 'FontSize', 12);clim([0,1])
 subplot 344,plot(C,'Color',[0.85,0.33,0.10]),axis([0 5000 -1000 1000]),text('Units','normalized','String','(d)','Position',[0.01 0.93 0]);title('Denoised signal');
 ylabel('Amplitude/count','FontWeight','bold');xlabel('Number of sampling points');grid on;set(gca, 'GridLineStyle', ':', 'MinorGridLineStyle', '-', 'GridAlpha', 0.2, 'MinorGridAlpha', 0.2, 'Layer', 'top');
 subplot 348,loglog(f,P3A,'Color',[0.85,0.33,0.10]),ylim([0.001, 10000]);xlim([0.03,75]);grid on;title('Spectrum of (d)'); text('Units','normalized','String','(h)','Position',[0.01 0.93 0]);ylabel('Amplitude(dB)','FontWeight','bold');xlabel('Frequency(Hz)');
 subplot(3,4,12);pcolor(t,frq3,abs(cfss3));colormap("jet"); title("Scalogram of (d)");set(gca,"yscale","log");xlabel('Time (s)','FontWeight','bold');
-text('Units', 'normalized', 'String', '(l)', 'Position', [0.01 1.08 0]);hcol = colorbar;set(hcol);ylabel(hcol, 'Magnitude','FontWeight','bold');
-shading interp  ;axis tight;set(gca, 'FontSize', 12);clim([0,0.4])
+text('Units', 'normalized', 'String', '(l)', 'Position', [0.01 1.08 0]);shading interp;axis tight;set(gca, 'FontSize', 12);clim([0,0.4])
 subplot 343,plot(D,'Color',[0.47,0.67,0.19]),axis([0 5000 -1000 1000]),text('Units','normalized','String','(c)','Position',[0.01 0.93 0]);title('Oringinal signal');
 ylabel('Amplitude/count','FontWeight','bold');xlabel('Number of sampling points');grid on;set(gca, 'GridLineStyle', ':', 'MinorGridLineStyle', '-', 'GridAlpha', 0.2, 'MinorGridAlpha', 0.2, 'Layer', 'top');
 subplot 347,loglog(f,P4A,'Color',[0.47,0.67,0.19]),ylim([0.001, 10000]);title('Spectrum of (c)'); xlim([0.03,75]);grid on; text('Units','normalized','String','(g)','Position',[0.01 0.93 0]);ylabel('Amplitude(dB)','FontWeight','bold');xlabel('Frequency(Hz)');
 subplot(3,4,11);pcolor(t,frq4,abs(cfss4));colormap("jet"); title("Scalogram of (c)");set(gca,"yscale","log");xlabel('Time (s)','FontWeight','bold');
-text('Units', 'normalized', 'String', '(k)', 'Position', [0.01 1.08 0]);hcol = colorbar;set(hcol);ylabel(hcol, 'Magnitude','FontWeight','bold');
-shading interp  ;axis tight;set(gca, 'FontSize', 12);clim([0,0.4])
+text('Units', 'normalized', 'String', '(k)', 'Position', [0.01 1.08 0]);shading interp  ;axis tight;set(gca, 'FontSize', 12);clim([0,0.4])

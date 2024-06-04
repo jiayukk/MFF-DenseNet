@@ -24,6 +24,9 @@ Matlab 2021a and above
 
 Deep Learning Toolbox
 
+## Attention！！！
+Due to github's download limitations, please download the “.mat” file manually.
+
 ## Contact Information
 If you have any questions, feel free to contact Jin Li
 - Email：geologylj@163.com

@@ -1,7 +1,7 @@
 # MFF-DenseNet: Densely Connected Convolutional Network with Multi-scale Feature Fusion for Magnetotelluric Noise Suppression
 
 ## Project Overview
-This project is designed for manuscript "MFF-DenseNet: Densely Connected Convolutional Network with Multi-scale Feature Fusion for Magnetotelluric Noise Suppression" submission to JGR-Solid Earth, providing a set of tools for the processing and analysis of magnetotelluric data. The toolset includes functionalities for data preprocessing, analysis, and visualization, helping researchers efficiently denoising magnetotelluric noisy data.
+This project is designed for manuscript "MFF-DenseNet: Densely Connected Convolutional Network with Multi-scale Feature Fusion for Magnetotelluric Noise Suppression" submission to JGR-Solid Earth, providing a set of tools for the processing and analysis of magnetotelluric data. The toolset includes functionalities for data preprocessing, analysis, and visualization, helping researchers efficiently separate signal and noise from MT noisy data.
 
 ## Installation
 1. Extract the ZIP file (or clone the git repository) somewhere you can easily reach it.

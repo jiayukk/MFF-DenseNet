@@ -61,7 +61,7 @@ f = Fs*(0:(L/2))/L;
 P1D(2:end-1) = 2*P1D(2:end-1);
 %% Figure 10
 figure();
-subplot(3, 1, 1);
+subplot(2, 1, 1);
 plot(A, 'Color', [0 0 0], 'LineWidth', 1.6, 'DisplayName', 'Original noise data');
 hold on;
 plot(B,'color',[0.47 0.67 0.19], 'LineWidth', 1.4, 'DisplayName','Wavelet extracted noise data')
@@ -72,7 +72,7 @@ xticks(0:1000:5000);yticks(-8000:2000:8000);set(gca, 'GridLineStyle', ':', 'Mino
 xlabel('Number of samepling points')
 ylabel('Amplitute/count','FontWeight','bold');
 legend('Location', 'southwest', 'NumColumns', 3);
-subplot(3, 1, 2);
+subplot(2, 1, 2);
 loglog(f,P1A,'k', 'Color', [0 0 0], 'LineWidth', 1.6, 'DisplayName', 'Original noise data')
 hold on;
 loglog(f,P1B,'color',[0.47 0.67 0.19], 'LineWidth', 1.4, 'DisplayName',' Wavelet extracted noise data')

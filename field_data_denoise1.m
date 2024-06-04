@@ -1,5 +1,6 @@
 %% Load data for testing
 Fiednoisydata=load('Field_dataA.dat');
+%Change 'Field_dataA.dat' to load different data
 %This example was designed to test denoising results using different percentages of the dataset
 load('MFF_DenseNet10.mat')% 10 percentage
 load('MFF_DenseNet20.mat')% 20 percentage

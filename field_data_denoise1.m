@@ -1,7 +1,11 @@
+%% Load data for testing
 Fiednoisydata=load('Field_dataA.dat');
-load('MFF_DenseNet10.mat')
-load('MFF_DenseNet20.mat')
-load('MFF_DenseNet30.mat')
+%This example was designed to test denoising results using different percentages of the dataset
+load('MFF_DenseNet10.mat')% 10 percentage
+load('MFF_DenseNet20.mat')% 20 percentage
+load('MFF_DenseNet30.mat')% 30 percentage
+load('MFF_DenseNet.mat')
+%% Denoising
 MT=Fiednoisydata-mean(Fiednoisydata);
 Denoise10=[];
 for i = 1:length(MT)
@@ -50,7 +54,7 @@ for i = 1:length(MT)
         Denoise70=[Denoise70,a-DEX'];
     end
 end
-
+%% Plot
 figure()
 subplot(3,2,1),plot(Fiednoisydata(166001:170000),'Color',[0 0.447058823529412 0.741176470588235])
 hold on
@@ -72,7 +76,6 @@ hold on
 plot(Denoise70(166001:170000),'Color',[1.00 0.41 0.16]),legend('Noisy data','Reconstructed signal'),text('Units','normalized','String','(d)','Position',[0.01 0.93 0]);
 ylabel('Amplitute/count','FontWeight','bold');grid on;set(gca, 'GridLineStyle', ':', 'MinorGridLineStyle', '-', 'GridAlpha', 0.2, 'MinorGridAlpha', 0.2, 'Layer', 'top');
 title('Ratio=70%')
-
 subplot(3,2,5),plot(Denoise10(166001:170000),'g')
 hold on
 plot(Denoise20(166001:170000),'b')

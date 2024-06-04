@@ -7,6 +7,7 @@ load('MFF_DenseNet20.mat')% 20 percentage
 load('MFF_DenseNet30.mat')% 30 percentage
 load('MFF_DenseNet.mat')
 %% Denoising
+fd=200;
 MT=Fiednoisydata-mean(Fiednoisydata);
 Denoise10=[];
 for i = 1:length(MT)

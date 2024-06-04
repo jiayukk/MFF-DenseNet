@@ -1,12 +1,13 @@
-%% Load data for testing
+%% Load data for testing  
 Fiednoisydata=load('Field_dataA.dat');
 %Change 'Field_dataA.dat' to load different data
-%This example was designed to test denoising results using different percentages of the dataset
+%This example was designed to test denoising results using different percentages of the dataset (Figure 21 in the manuscript)
 load('MFF_DenseNet10.mat')% 10 percentage
 load('MFF_DenseNet20.mat')% 20 percentage
 load('MFF_DenseNet30.mat')% 30 percentage
 load('MFF_DenseNet.mat')
 %% Denoising
+fd=200;
 MT=Fiednoisydata-mean(Fiednoisydata);
 Denoise10=[];
 for i = 1:length(MT)

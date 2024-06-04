@@ -14,8 +14,13 @@ Deep Learning Toolbox
 3. Run Core_program_denoise3.m
 4. Run field_data_denoise1.m to denoise field data
 
-## 
+### Dependencies
+Matlab 2021a and above
+Deep Learning Toolbox
 
 ## Contact Information
-For any questions or suggestions, please contact the project maintainer:
-- Email: geologylj@163.com
+If you have any questions, feel free to contact Jin Li
+- Email：geologylj@163.com
+For any questions or suggestions about code, please contact the project maintainer:
+- Email: wangjiayu20000412@163.com
+

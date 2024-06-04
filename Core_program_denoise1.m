@@ -1,8 +1,10 @@
 clear
+%% Load data and model
 load('figure9.mat')
-fd=200;
-
 load('MFF_DenseNet.mat')
+
+%% Denoising 
+fd=200;
 MT=Noise_sample9+Signal_sample9;Denoisedata=[];
 for i = 1:length(MT)
     if mod(i,fd)==0
@@ -15,7 +17,7 @@ for i = 1:length(MT)
     end
 end
 C=Denoisedata;
-%% loglog
+%% Cauculating spectra
 fs=150;
 Y1 = fft(A);
 L=5000;
@@ -73,8 +75,8 @@ cfss1=(cfs1 - minvalue) / (maxvalue - minvalue);
 cfss2=(cfs2 - minvalue) / (maxvalue - minvalue);
 cfss3=(cfs3 - minvalue) / (maxvalue - minvalue);
 cfss4=(cfs4 - minvalue) / (maxvalue - minvalue);
-%%
-%3行4列
+
+%% Plot
 figure()
 subplot 341,plot(A,'k'),axis([0 5000 -10000 10000]),text('Units','normalized','String','(a)','Position',[0.01 0.93 0]); title('Noisy data');
 ylabel('Amplitude/count','FontWeight','bold');xlabel('Number of sampling points');grid on;set(gca, 'GridLineStyle', ':', 'MinorGridLineStyle', '-', 'GridAlpha', 0.2, 'MinorGridAlpha', 0.2, 'Layer', 'top');

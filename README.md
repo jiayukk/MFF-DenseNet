@@ -4,7 +4,7 @@
 This project is designed for manuscript "MFF-DenseNet: Densely Connected Convolutional Network with Multi-scale Feature Fusion for Magnetotelluric Noise Suppression" submission to JGR-Solid Earth, providing a set of tools for the processing and analysis of magnetotelluric data. The toolset includes functionalities for data preprocessing, analysis, and visualization, helping researchers efficiently separate signal and noise from MT noisy data.
 
 ## Installation
-1. Extract the ZIP file (or clone the git repository) somewhere you can easily reach it.
+1. Clone the git repository (Or use "DownLoasd zip" and download the ".mat" file manually.) somewhere you can easily reach it.
 2. Add the folder to your path in MATLAB
 Deep Learning Toolbox
 
@@ -25,7 +25,9 @@ Matlab 2021a and above
 Deep Learning Toolbox
 
 ## Attention！！！
-Due to github's download limitations, please download the “.mat” file manually.
+Due to github's download limitations, please download the ".mat" file manually.
+
+Make sure you download the files without using "DownLoasd zip", as GitHub's compressed downloads can corrupt large files. 
 
 ## Contact Information
 If you have any questions, feel free to contact Jin Li

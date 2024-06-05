@@ -19,6 +19,7 @@ Deep Learning Toolbox
 ### For field data
 1. Field_data_denoise1.m
 2. Field_data_denoise2.m
+%Field data(A)-(E) were collcted from the ore cluster area.
 
 ### Dependencies
 Matlab 2021a and above

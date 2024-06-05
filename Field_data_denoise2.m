@@ -6,6 +6,7 @@ load('Trained_without_SPP.mat')
 load('Trained_without_CSL.mat')
 load('MFF_DenseNet.mat')
 %% Denoising
+A=A-mean(A);
 MT=A(15001:19000);fd=200;
 DenseDenoise=[];
 for i = 1:length(MT)

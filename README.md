@@ -1,4 +1,4 @@
-[![DOI]([https://zenodo.org/badge/DOI/10.5281/zenodo.11470750])https://zenodo.org/badge/DOI/10.5281/zenodo.11470750]
+[![DOI](https://zenodo.org/badge/288950002.svg)](https://zenodo.org/badge/DOI/10.5281/zenodo.11470750))
 # MFF-DenseNet: Densely Connected Convolutional Network with Multi-scale Feature Fusion for Magnetotelluric Noise Suppression
 ![image](https://github.com/jiayukk/Figure/blob/main/Figure22.jpg)
 

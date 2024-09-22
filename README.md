@@ -5,12 +5,13 @@
 ![image](https://github.com/jiayukk/Figure/blob/main/Figure22.png)
 
 This repository contains the code and implementation for MFF-DenseNet, a densely connected convolutional network with multi-scale feature fusion. It is designed for magnetotelluric (MT) noise suppression. The toolset includes functionalities for data preprocessing, analysis, and visualization, helping researchers efficiently separate signal and noise from MT noisy data.
+
 Key words: ` Magnetotelluric` `Denoising` `Deep Learning` `Nonlinear Mapping` `Feature Reuse` 
 
 # Citation
 If you found this project useful, please cite the following paper:
 
-Wang, J., Li, J., Zhou, H., Zhao, X., & Tang, J. (2024). MFF-DenseNet: Densely connected convolutional network with multi-scale feature fusion for magnetotelluric noise suppression. Journal of Geophysical Research: Solid Earth, 129, e20241B028869. https://doi.org/10.1029/2024JB028869
+Wang, J., Li, J., Zhou, H., Zhao, X., & Tang, J. (2024). MFF-DenseNet: Densely connected convolutional network with multi-scale feature fusion for magnetotelluric noise suppression. Journal of Geophysical Research: Solid Earth, 129, e2024JB028869. https://doi.org/10.1029/2024JB028869
 
 ## Installation
 1. Clone the git repository (Or use "DownLoasd zip" and download the ".mat" file manually.) somewhere you can easily reach it.
